@@ -11,6 +11,7 @@
 \begin{multicols*}{3}
   
 \maketitle
+\hrule
 \centering
 \section*{Navigation}
 \begin{tabular}{@{}rl@{}}
@@ -19,8 +20,20 @@
 \verb|Ctrl+f / +b| & page up / down
 \end{tabular}
 
+\section*{History}
+\begin{tabular}{@{}rl@{}}
+\verb|:, Ctrl+f| or \verb|q:| & show command history \\
+\verb|/, Ctrl+f| or \verb|q/| & show search history \\
+\verb|:set history| & show or set number of history elements
+\end{tabular}
+
 \section*{Search and Replace}
 \begin{tabular}{@{}rl@{}}
+\verb|:set hlsearch| & highlight search \\
+\verb|:noh|      & remove current search highlight \\
+\verb|:set incsearch| & incremental search \\
+\verb|/|        & initiate search \\
+\verb|:s|       & initiate replace \\
 \verb|*|        & 0 or more of the preceeding character \\
 \verb|\+|       & 1 or more of the preceeding character \\
 \verb|\s|       & white space character \\
