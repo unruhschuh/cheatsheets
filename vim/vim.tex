@@ -1,0 +1,42 @@
+\documentclass[10pt,a4paper,landscape,oneside]{scrartcl}
+
+\input{../preamble.tex}
+
+\title{Vim Cheat Sheet}
+\author{Thomas Leitz (unruhschuh.com)}
+\date{\today}
+
+\begin{document}
+
+\raggedcolumns
+
+\begin{multicols*}{3}
+  
+\maketitle
+\centering
+\section*{Navigation}
+\begin{tabular}{@{}rl@{}}
+\verb|h,j,k,l|     & left, down, up, right \\
+\verb|Ctrl+u / +d| & half page up / down \\
+\verb|Ctrl+f / +b| & page up / down
+\end{tabular}
+
+\section*{Search and Replace}
+\begin{tabular}{@{}rl@{}}
+\verb|*|        & 0 or more of the preceeding character \\
+\verb|\+|       & 1 or more of the preceeding character \\
+\verb|\s|       & white space character \\
+\verb|\S|       & non white space character \\
+\verb|\w|       & word character \\
+\verb|[2-3a-z]| & range of characters \\
+\verb|^|        & beginning of line, negation in char ranges \\
+\verb|$|        & end of line \\
+\verb|\L,\U|    & next characters lower/upper case until \verb|\E| \\
+\verb|\l,\u|    & next character lower/upper case \\
+\verb|\||       & alternation \\
+\verb|\(\)|     & capture, reuse with \verb|\1 \2 \3|
+\end{tabular}
+
+\end{multicols*}
+
+\end{document}
