@@ -32,7 +32,13 @@ Thomas Leitz -- Unruhschuh.com\hfill
 \begin{tabular}{@{}rl@{}}
 \verb|:, Ctrl+f| or \verb|q:| & show command history \\
 \verb|/, Ctrl+f| or \verb|q/| & show search history \\
-\verb|:set history| & show or set number of history elements
+\verb|:set history| & show or set number of history elements \\
+\verb|g| / \verb|G| & go to beginning / end of file
+\end{tabular}
+
+\subsection*{Visual}
+\begin{tabular}{@{}rl@{}}
+\verb|gv| & reuse last selection
 \end{tabular}
 
 \subsection*{Search and Replace}
@@ -47,8 +53,7 @@ Thomas Leitz -- Unruhschuh.com\hfill
 \verb|:s|       & initiate replace \\
 \verb|*|        & 0 or more of the preceeding character \\
 \verb|\+|       & 1 or more of the preceeding character \\
-\verb|\s|       & white space character \\
-\verb|\S|       & non white space character \\
+\verb|\s| / \verb|\S|      & white space / non white space character \\
 \verb|\w|       & word character \\
 \verb|[2-3a-z]| & range of characters \\
 \verb|^|        & beginning of line, negation in char ranges \\
@@ -80,7 +85,20 @@ Thomas Leitz -- Unruhschuh.com\hfill
 
 \section*{Bash / Shell}
 \subsection*{List and find}
-\subsection*{Piping}
+\begin{tabular}{@{}rl@{}}
+\verb| ls -lah | & list long, all, human \\
+\verb| ls -Sr / -tr | & sort by size / time (r for reverse) \\
+\verb= ls -1 | wc -l = & count files and folders \\
+\verb= ls -1p | grep -v / | wc -l = & count only files
+\end{tabular}
+\subsection*{Piping and Redirecting}
+\begin{tabular}{@{}rl@{}}
+\verb|> file| & redirect stdout to file \\
+\verb|>> file | & redirect stdout to file (append) \\
+\verb|2> file | & redirect stderr to file \\
+\verb|> file 2>&1 | & redirect stdout and stderr to file \\
+\verb=| tee -a file= & pipe stdout to stdout \\ & and write to file (-a for append) \\
+\end{tabular}
 \subsection*{SSH / SFTP}
 \begin{tabular}{@{}rl@{}}
   \verb|ssh -YC| & X11 forwarding \\
@@ -89,6 +107,18 @@ Thomas Leitz -- Unruhschuh.com\hfill
   \verb|sftp -P| \itshape{port} & specify sftp port
 \end{tabular}
 \subsection*{Git}
+\begin{tabular}{@{}rl@{}}
+  \verb| reset | & unstage / unadd \\
+  \verb| reset --hard | & reset everything to last commit \\
+  \verb| checkout -- file | & reset file to last committed state \\
+  \verb| checkout -b branch | & create new branch \verb|branch| and co
+\end{tabular}
+\subsubsection*{git remote}
+\begin{tabular}{@{}rl@{}}
+  \verb| remote -v | & list remotes with url \\
+  \verb| add name url | & add remote \\
+  \verb| set-url name url | & change \verb|url| of remote \verb|name|
+\end{tabular}
 
 \end{multicols*}
 
