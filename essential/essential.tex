@@ -1,0 +1,95 @@
+\input{../preamble.tex}
+
+\author{Thomas Leitz (Unruhschuh.com)}
+\date{\today}
+
+\begin{document}
+
+\raggedcolumns
+
+Essential Cheat Sheet\hfill
+Thomas Leitz -- Unruhschuh.com\hfill
+\today
+\hrule
+\vspace*{2pt}
+
+\begin{multicols*}{3}
+  
+%\title{Vim Cheat Sheet}
+%\maketitle
+
+\centering
+
+\section*{Vim}
+\subsection*{Navigation}
+\begin{tabular}{@{}rl@{}}
+\verb|h,j,k,l|     & left, down, up, right \\
+\verb|Ctrl+u / +d| & half page up / down \\
+\verb|Ctrl+f / +b| & page up / down
+\end{tabular}
+
+\subsection*{History}
+\begin{tabular}{@{}rl@{}}
+\verb|:, Ctrl+f| or \verb|q:| & show command history \\
+\verb|/, Ctrl+f| or \verb|q/| & show search history \\
+\verb|:set history| & show or set number of history elements
+\end{tabular}
+
+\subsection*{Search and Replace}
+\begin{tabular}{@{}rl@{}}
+\verb|:set hlsearch| & highlight search \\
+\verb|:noh|      & remove current search highlight \\
+\verb|:set incsearch| & incremental search \\
+\verb|/|        & initiate search \\
+\verb|n| / \verb|N| & jump to next / previous match \\
+\verb|Gn| / \verb|GN| & jump to first / last match \\
+\verb|*| / \verb|#| & search forward / backward for current word \\
+\verb|:s|       & initiate replace \\
+\verb|*|        & 0 or more of the preceeding character \\
+\verb|\+|       & 1 or more of the preceeding character \\
+\verb|\s|       & white space character \\
+\verb|\S|       & non white space character \\
+\verb|\w|       & word character \\
+\verb|[2-3a-z]| & range of characters \\
+\verb|^|        & beginning of line, negation in char ranges \\
+\verb|$|        & end of line \\
+\verb|\L,\U|    & next characters lower/upper case until \verb|\E| \\
+\verb|\l,\u|    & next character lower/upper case \\
+\verb|\||       & alternation \\
+\verb|\(\)|     & capture, reuse with \verb|\1 \2 \3|
+\end{tabular}
+
+\subsection*{Windows}
+\begin{tabular}{@{}rl@{}}
+\verb|:split| or \verb|:sp| \itshape{file} & split current window horizontally \\
+\verb|:vsplit| or \verb|:vsp| \itshape{file} & split current window vertically \\
+\verb|Ctrl+ww| & switch to next window \\
+\verb|Ctrl+w h,j,k,l| & switch to another window
+\end{tabular}
+
+\subsection*{Tabs}
+\begin{tabular}{@{}rl@{}}
+  \verb|:tabs| & list all tabs \\
+  \verb|:tabnew| & open a new empty tab \\
+  \verb|:tabedit| or \verb|:tabe| \itshape{file} & open new tab with \itshape{file} \\
+  \verb|:tab split| & open new tab with the same buffer \\
+  \verb|gt| / \verb|gT| & go to next / previous tab
+\end{tabular}
+\vfill\null
+\columnbreak
+
+\section*{Bash / Shell}
+\subsection*{List and find}
+\subsection*{Piping}
+\subsection*{SSH / SFTP}
+\begin{tabular}{@{}rl@{}}
+  \verb|ssh -YC| & X11 forwarding \\
+  \verb|ssh -p| \itshape{port} & specify ssh port \\
+  \verb|ssh -L| \itshape{port:host:hostport} & bind local port to hostport \\
+  \verb|sftp -P| \itshape{port} & specify sftp port
+\end{tabular}
+\subsection*{Git}
+
+\end{multicols*}
+
+\end{document}
