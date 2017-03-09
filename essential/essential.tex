@@ -21,11 +21,15 @@ Thomas Leitz -- Unruhschuh.com\hfill
 \centering
 
 \section*{Vim}
+\hrule\vspace*{2pt}
 \subsection*{Navigation}
 \begin{tabular}{@{}rl@{}}
+\verb|set mouse=a| & enable mouse \\
 \verb|h,j,k,l|     & left, down, up, right \\
 \verb|Ctrl+u / +d| & half page up / down \\
-\verb|Ctrl+f / +b| & page up / down
+\verb|Ctrl+f / +b| & page up / down \\
+\verb|zz| / \verb|zt| / \verb|zb| & center / top / bottom cursor \\
+\verb|Ctrl+E| / \verb|Ctrl+Y| & scroll up / down
 \end{tabular}
 
 \subsection*{History}
@@ -64,7 +68,8 @@ Thomas Leitz -- Unruhschuh.com\hfill
 \verb|:split| or \verb|:sp| \itshape{file} & split current window horizontally \\
 \verb|:vsplit| or \verb|:vsp| \itshape{file} & split current window vertically \\
 \verb|Ctrl+ww| & switch to next window \\
-\verb|Ctrl+w h,j,k,l| & switch to another window
+\verb|Ctrl+w h,j,k,l| & switch to another window \\
+\verb|Ctrl+w H,J,K,L| & move current window
 \end{tabular}
 
 \subsection*{Tabs}
@@ -75,10 +80,11 @@ Thomas Leitz -- Unruhschuh.com\hfill
   \verb|:tab split| & open new tab with the same buffer \\
   \verb|gt| / \verb|gT| & go to next / previous tab
 \end{tabular}
-\vfill\null
-\columnbreak
+%\vfill\null
+%\columnbreak
 
 \section*{Bash / Shell}
+\hrule\vspace*{2pt}
 \subsection*{List and find}
 \subsection*{Piping}
 \subsection*{SSH / SFTP}
