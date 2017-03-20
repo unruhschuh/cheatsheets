@@ -103,7 +103,7 @@ Thomas Leitz -- Unruhschuh.com\hfill
 \verb|>> file | & redirect stdout to file (append) \\
 \verb|2> file | & redirect stderr to file \\
 \verb|> file 2>&1 | & redirect stdout and stderr to file \\
-\verb=| tee -a file= & pipe stdout to stdout \\ & and write to file (-a for append) \\
+\verb=2>&1 | tee -a file= & redirect stderr to stdout, pipe both to tee \\ & and write to file (-a for append) \\
 \end{tabular}
 \subsection*{SSH / SFTP}
 \begin{tabular}{@{}rl@{}}
@@ -116,8 +116,10 @@ Thomas Leitz -- Unruhschuh.com\hfill
 \begin{tabular}{@{}rl@{}}
   \verb| reset | & unstage / unadd \\
   \verb| reset --hard | & reset everything to last commit \\
+  \verb| clean -dfx | & clean working directory \\
   \verb| checkout -- file | & reset file to last committed state \\
-  \verb| checkout -b branch | & create new branch \verb|branch| and co
+  \verb| checkout -b branch | & create new branch \verb|branch| and c.o. \\
+  TODO & something something submodules
 \end{tabular}
 \subsubsection*{git remote}
 \begin{tabular}{@{}rl@{}}
