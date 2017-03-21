@@ -1,5 +1,7 @@
 \input{../preamble.tex}
 
+\usepackage{easy-todo}
+
 \author{Thomas Leitz (Unruhschuh.com)}
 \date{\today}
 
@@ -20,112 +22,136 @@ Thomas Leitz -- Unruhschuh.com\hfill
 
 \centering
 
-\section*{Vim}
+\section{Vim}
 \hrule\vspace*{2pt}
-\subsection*{Navigation}
+\subsection{Buffers}
 \begin{tabular}{@{}rl@{}}
-\verb|set mouse=a| & enable mouse \\
-\verb|h,j,k,l|     & left, down, up, right \\
-\verb|Ctrl+u / +d| & half page up / down \\
-\verb|Ctrl+f / +b| & page up / down \\
-\verb|zz| / \verb|zt| / \verb|zb| & center / top / bottom cursor \\
-\verb|Ctrl+E| / \verb|Ctrl+Y| & scroll up / down
+    \verb|:bn| / \verb|:bp| & jump to next / previous buffer \\
+    \verb|:bw| & close current buffer
+\end{tabular}
+\subsection{Navigation}
+\begin{tabular}{@{}rl@{}}
+    \verb|set mouse=a| & enable mouse \\
+    \verb|h,j,k,l|     & left, down, up, right \\
+    \verb|Ctrl+u / +d| & half page up / down \\
+    \verb|Ctrl+f / +b| & page up / down \\
+    \verb|zz| / \verb|zt| / \verb|zb| & center / top / bottom cursor \\
+    \verb|Ctrl+E| / \verb|Ctrl+Y| & scroll up / down
 \end{tabular}
 
-\subsection*{History}
+\subsection{History}
 \begin{tabular}{@{}rl@{}}
-\verb|:, Ctrl+f| or \verb|q:| & show command history \\
-\verb|/, Ctrl+f| or \verb|q/| & show search history \\
-\verb|:set history| & show or set number of history elements \\
-\verb|g| / \verb|G| & go to beginning / end of file
+    \verb|:, Ctrl+f| or \verb|q:| & show command history \\
+    \verb|/, Ctrl+f| or \verb|q/| & show search history \\
+    \verb|:set history| & show or set number of history elements \\
+    \verb|g| / \verb|G| & go to beginning / end of file
 \end{tabular}
 
-\subsection*{Visual}
+\subsection{Visual}
 \begin{tabular}{@{}rl@{}}
-\verb|gv| & reuse last selection
+    \verb|gv| & reuse last selection
 \end{tabular}
 
-\subsection*{Search and Replace}
+\subsection{Search and Replace}
 \begin{tabular}{@{}rl@{}}
-\verb|:set hlsearch| & highlight search \\
-\verb|:noh|      & remove current search highlight \\
-\verb|:set incsearch| & incremental search \\
-\verb|/|        & initiate search \\
-\verb|n| / \verb|N| & jump to next / previous match \\
-\verb|Gn| / \verb|GN| & jump to first / last match \\
-\verb|*| / \verb|#| & search forward / backward for current word \\
-\verb|:s|       & initiate replace \\
-\verb|*|        & 0 or more of the preceeding character \\
-\verb|\+|       & 1 or more of the preceeding character \\
-\verb|\s| / \verb|\S|      & white space / non white space character \\
-\verb|\w|       & word character \\
-\verb|[2-3a-z]| & range of characters \\
-\verb|^|        & beginning of line, negation in char ranges \\
-\verb|$|        & end of line \\
-\verb|\L,\U|    & next characters lower/upper case until \verb|\E| \\
-\verb|\l,\u|    & next character lower/upper case \\
-\verb|\||       & alternation \\
-\verb|\(\)|     & capture, reuse with \verb|\1 \2 \3|
+    \verb|:set hlsearch| & highlight search \\
+    \verb|:noh|      & remove current search highlight \\
+    \verb|:set incsearch| & incremental search \\
+    \verb|/|        & initiate search \\
+    \verb|\c|      & ignore case \\
+    \verb|n| / \verb|N| & jump to next / previous match \\
+    \verb|Gn| / \verb|GN| & jump to first / last match \\
+    \verb|*| / \verb|#| & search fwd. / rev. for current word \\
+    \verb|:%s|      & initiate replace \%: whole document \\
+    \verb|*|        & 0 or more of the preceeding character \\
+    \verb|\+|       & 1 or more of the preceeding character \\
+    \verb|\s| / \verb|\S|      & white space / non white space character \\
+    \verb|\w|       & word character \\
+    \verb|[2-3a-z]| & range of characters \\
+    \verb|^|        & beginning of line, negation in char ranges \\
+    \verb|$|        & end of line \\
+    \verb|\L,\U|    & next characters lower/upper case until \verb|\E| \\
+    \verb|\l,\u|    & next character lower/upper case \\
+    \verb|\||       & alternation \\
+    \verb|\(\)|     & capture, reuse with \verb|\1 \2 \3|
 \end{tabular}
 
-\subsection*{Windows}
+\subsection{Windows}
 \begin{tabular}{@{}rl@{}}
-\verb|:split| or \verb|:sp| \itshape{file} & split current window horizontally \\
-\verb|:vsplit| or \verb|:vsp| \itshape{file} & split current window vertically \\
-\verb|Ctrl+ww| & switch to next window \\
-\verb|Ctrl+w h,j,k,l| & switch to another window \\
-\verb|Ctrl+w H,J,K,L| & move current window
+    \verb|:split| or \verb|:sp| \itshape{file} & split current window horizontally \\
+    \verb|:vsplit| or \verb|:vsp| \itshape{file} & split current window vertically \\
+    \verb|Ctrl+ww| & switch to next window \\
+    \verb|Ctrl+w h,j,k,l| & switch to another window \\
+    \verb|Ctrl+w H,J,K,L| & move current window
 \end{tabular}
 
-\subsection*{Tabs}
+\subsection{Tabs}
 \begin{tabular}{@{}rl@{}}
-  \verb|:tabs| & list all tabs \\
-  \verb|:tabnew| & open a new empty tab \\
-  \verb|:tabedit| or \verb|:tabe| \itshape{file} & open new tab with \itshape{file} \\
-  \verb|:tab split| & open new tab with the same buffer \\
-  \verb|gt| / \verb|gT| & go to next / previous tab
+    \verb|:tabs| & list all tabs \\
+    \verb|:tabnew| & open a new empty tab \\
+    \verb|:tabedit| or \verb|:tabe| \itshape{file} & open new tab with \itshape{file} \\
+    \verb|:tab split| & open new tab with the same buffer \\
+    \verb|gt| / \verb|gT| & go to next / previous tab
+\end{tabular}
+
+\subsection{Folding}
+\begin{tabular}{@{}rl@{}}
+    \verb|zi| & toggle folding on / off \\
+    \verb|za| & toggle folding on / off individually \\
+    \verb|zj| / \verb|zk| & move to next / previous folding
+\end{tabular}
+
+\subsection{LaTeX Box}
+\begin{tabular}{@{}rl@{}}
+    \verb|\ll| & compile with latexmk \\
+    \verb|\lL| & force compile with latexmk \\
+    \verb|\ls| & open pdf in viewer \\
+    \verb|\lt| & open TOC \\
+    \verb|:cope[n] | & open quickfix \\
+    \verb|:ccl[ose] | & close quickfix
 \end{tabular}
 %\vfill\null
 %\columnbreak
 
-\section*{Bash / Shell}
+\section{Bash / Shell}
 \hrule\vspace*{2pt}
-\subsection*{List and find}
+\subsection{List and find}
 \begin{tabular}{@{}rl@{}}
-\verb| ls -lah | & list long, all, human \\
-\verb| ls -Sr / -tr | & sort by size / time (r for reverse) \\
-\verb= ls -1 | wc -l = & count files and folders \\
-\verb= ls -1p | grep -v / | wc -l = & count only files
+    \verb| ls -lah | & list long, all, human \\
+    \verb| ls -Sr / -tr | & sort by size / time (r for reverse) \\
+    \verb= ls -1 | wc -l = & count files and folders \\
+    \verb= ls -1p | grep -v / | wc -l = & count only files
 \end{tabular}
-\subsection*{Piping and Redirecting}
+\subsection{Piping and Redirecting}
 \begin{tabular}{@{}rl@{}}
-\verb|> file| & redirect stdout to file \\
-\verb|>> file | & redirect stdout to file (append) \\
-\verb|2> file | & redirect stderr to file \\
-\verb|> file 2>&1 | & redirect stdout and stderr to file \\
-\verb=2>&1 | tee -a file= & redirect stderr to stdout, pipe both to tee \\ & and write to file (-a for append) \\
+    \verb|> file| & redirect stdout to file \\
+    \verb|>> file | & redirect stdout to file (append) \\
+    \verb|2> file | & redirect stderr to file \\
+    \verb|> file 2>&1 | & redirect stdout and stderr to file \\
+    \verb=2>&1 | tee -a file= & redirect stderr to stdout, pipe both to tee \\ & and write to file (-a for append) \\
 \end{tabular}
-\subsection*{SSH / SFTP}
+\subsection{SSH / SFTP}
 \begin{tabular}{@{}rl@{}}
-  \verb|ssh -YC| & X11 forwarding \\
-  \verb|ssh -p| \itshape{port} & specify ssh port \\
-  \verb|ssh -L| \itshape{port:host:hostport} & bind local port to hostport \\
-  \verb|sftp -P| \itshape{port} & specify sftp port
+    \verb|ssh -YC| & X11 forwarding \\
+    \verb|ssh -p| \itshape{port} & specify ssh port \\
+    \verb|ssh -L| \itshape{port:host:hostport} & bind local port to hostport \\
+    \verb|sftp -P| \itshape{port} & specify sftp port \\
+     & \todo{create key}
 \end{tabular}
-\subsection*{Git}
+\subsection{Git}
 \begin{tabular}{@{}rl@{}}
-  \verb| reset | & unstage / unadd \\
-  \verb| reset --hard | & reset everything to last commit \\
-  \verb| clean -dfx | & clean working directory \\
-  \verb| checkout -- file | & reset file to last committed state \\
-  \verb| checkout -b branch | & create new branch \verb|branch| and c.o. \\
-  TODO & something something submodules
+    \verb| reset | & unstage / unadd \\
+    \verb| reset --hard | & reset everything to last commit \\
+    \verb| clean -dfx | & clean working directory \\
+    \verb| checkout -- file | & reset file to last committed state \\
+    \verb| checkout -b branch | & create new branch \verb|branch| and c.o. \\
+     & \todo{something something submodules}
 \end{tabular}
-\subsubsection*{git remote}
+\subsubsection{git remote}
 \begin{tabular}{@{}rl@{}}
-  \verb| remote -v | & list remotes with url \\
-  \verb| add name url | & add remote \\
-  \verb| set-url name url | & change \verb|url| of remote \verb|name|
+    \verb| remote -v | & list remotes with url \\
+    \verb| add name url | & add remote \\
+    \verb| set-url name url | & change \verb|url| of remote \verb|name|
 \end{tabular}
 
 \end{multicols*}
