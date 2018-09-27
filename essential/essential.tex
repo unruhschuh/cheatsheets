@@ -33,6 +33,7 @@ Thomas Leitz -- Unruhschuh.com\hfill
 \begin{tabular}{@{}rl@{}}
     \verb|set mouse=a| & enable mouse \\
     \verb|h,j,k,l|     & left, down, up, right \\
+    \verb|gj| / \verb|vk| & down / up displayed line when wrapping \\
     \verb|Ctrl+u / +d| & half page up / down \\
     \verb|Ctrl+f / +b| & page up / down \\
     \verb|zz| / \verb|zt| / \verb|zb| & center / top / bottom cursor \\
@@ -111,6 +112,10 @@ Thomas Leitz -- Unruhschuh.com\hfill
     \verb|:cope[n] | & open quickfix \\
     \verb|:ccl[ose] | & close quickfix
 \end{tabular}
+\subsubsection{Completion}
+\begin{tabular}{@{}rl@{}}
+    \verb|<Ctrl-X><Ctrl-O>| & label completion for \verb|\ref{}| etc.
+\end{tabular}
 %\vfill\null
 %\columnbreak
 
@@ -121,7 +126,10 @@ Thomas Leitz -- Unruhschuh.com\hfill
     \verb| ls -lah | & list long, all, human \\
     \verb| ls -Sr / -tr | & sort by size / time (r for reverse) \\
     \verb= ls -1 | wc -l = & count files and folders \\
-    \verb= ls -1p | grep -v / | wc -l = & count only files
+    \verb= ls -1p | grep -v / | wc -l = & count only files \\
+    \verb| grep -rlI "abc" | & find files containing "abc" \\
+    & only show file names (l), \\
+    & ignore binary files (I)
 \end{tabular}
 \subsection{Piping and Redirecting}
 \begin{tabular}{@{}rl@{}}
